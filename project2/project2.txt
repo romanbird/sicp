@@ -1,0 +1,1 @@
+Project 2 is in the textbook! See section 2.2.4 of SICP

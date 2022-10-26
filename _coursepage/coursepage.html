@@ -1,0 +1,669 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Course Page</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="c8632fbc-b195-4343-9f2e-4c5c21d9d509" class="page sans"><header><h1 class="page-title">Course Page</h1></header><div class="page-body"><table id="80bb8f39-1303-4dca-a640-d6e1ab6acba1" class="simple-table"><thead class="simple-table-header"><tr id="e1156eef-7514-46df-8a07-8a194cafc275"><th id="uklP" class="simple-table-header-color simple-table-header"><strong><strong><strong><strong>Week</strong></strong></strong></strong></th><th id="TxYf" class="simple-table-header-color simple-table-header" style="width:114px">Reading</th><th id="Ox=b" class="simple-table-header-color simple-table-header" style="width:110px">Homework</th><th id="_|?I" class="simple-table-header-color simple-table-header" style="width:96px">Lab</th><th id="Eaft" class="simple-table-header-color simple-table-header"></th></tr></thead><tbody><tr id="330fc198-16d9-4343-a5be-51422ecb5f61"><th id="uklP" class="simple-table-header-color simple-table-header">1</th><td id="TxYf" class="" style="width:114px">1.1</td><td id="Ox=b" class="" style="width:110px">☑️</td><td id="_|?I" class="" style="width:96px">☑️</td><td id="Eaft" class=""><a href="https://archive.org/details/ucberkeley_webcast_l28HAzKy0N8">Lecture 01: functional programming 1</a></td></tr><tr id="7cb11c47-1cca-445b-9376-a675c7e7f9fd"><th id="uklP" class="simple-table-header-color simple-table-header"></th><td id="TxYf" class="" style="width:114px"></td><td id="Ox=b" class="" style="width:110px"></td><td id="_|?I" class="" style="width:96px"></td><td id="Eaft" class=""><a href="https://archive.org/details/ucberkeley_webcast_TTK2lZoWbPQ">Lecture 02: functional programming 2</a></td></tr><tr id="1e2fa3ab-42a9-4ac7-8b61-454fb735a70c"><th id="uklP" class="simple-table-header-color simple-table-header">2</th><td id="TxYf" class="" style="width:114px">1.3</td><td id="Ox=b" class="" style="width:110px">☑️</td><td id="_|?I" class="" style="width:96px">☑️</td><td id="Eaft" class=""><a href="https://archive.org/details/ucberkeley_webcast_ogIGxEzvnSE">Lecture 03: higher-order procedures 1</a></td></tr><tr id="758a2b3e-4c2a-423b-a08e-088667516734"><th id="uklP" class="simple-table-header-color simple-table-header"></th><td id="TxYf" class="" style="width:114px"></td><td id="Ox=b" class="" style="width:110px"></td><td id="_|?I" class="" style="width:96px"></td><td id="Eaft" class=""><a href="https://archive.org/details/ucberkeley_webcast_ZvH3wF2qg7Q">Lecture 04: higher-order procedures 2</a></td></tr><tr id="82ea5782-3c67-4f6e-8e6f-07debdfc6c61"><th id="uklP" class="simple-table-header-color simple-table-header">3</th><td id="TxYf" class="" style="width:114px">1.2.1-4</td><td id="Ox=b" class="" style="width:110px">☑️</td><td id="_|?I" class="" style="width:96px">☑️</td><td id="Eaft" class=""><a href="https://archive.org/details/ucberkeley_webcast_dC4YGxzoAXk">Lecture 05: user interface -Alan Kay-</a></td></tr><tr id="1e9f47a6-59ba-492d-86ec-fe4276b4e3af"><th id="uklP" class="simple-table-header-color simple-table-header"></th><td id="TxYf" class="" style="width:114px"></td><td id="Ox=b" class="" style="width:110px"></td><td id="_|?I" class="" style="width:96px"></td><td id="Eaft" class=""><a href="https://archive.org/details/ucberkeley_webcast_qxDGE1-S_LE">Lecture 06: user interface -Alan Kay-</a></td></tr><tr id="62988445-8089-483c-8a81-3cafd8d64d56"><th id="uklP" class="simple-table-header-color simple-table-header"></th><td id="TxYf" class="" style="width:114px"></td><td id="Ox=b" class="" style="width:110px"></td><td id="_|?I" class="" style="width:96px"></td><td id="Eaft" class=""><a href="https://archive.org/details/ucberkeley_webcast_32L5j10rrK0">Lecture 07: orders of growth</a></td></tr><tr id="db59be95-66a9-442f-a97c-120daa653b94"><th id="uklP" class="simple-table-header-color simple-table-header"></th><td id="TxYf" class="" style="width:114px"></td><td id="Ox=b" class="" style="width:110px"></td><td id="_|?I" class="" style="width:96px"></td><td id="Eaft" class=""><a href="https://archive.org/details/ucberkeley_webcast_0G3tNuBBO5I">Lecture 08: recursion and iteration</a></td></tr><tr id="e3586c8f-adb7-47d4-9a80-604398319920"><th id="uklP" class="block-color-gray_background simple-table-header">Project 1</th><td id="TxYf" class="block-color-gray_background" style="width:114px"></td><td id="Ox=b" class="block-color-gray_background" style="width:110px"></td><td id="_|?I" class="block-color-gray_background" style="width:96px"></td><td id="Eaft" class="block-color-gray_background"></td></tr><tr id="139f8fe3-088f-47c3-8465-eda758a8327b"><th id="uklP" class="simple-table-header-color simple-table-header">4</th><td id="TxYf" class="" style="width:114px">2.1, 2.2.1</td><td id="Ox=b" class="" style="width:110px">☑️</td><td id="_|?I" class="" style="width:96px">☑️</td><td id="Eaft" class=""><a href="https://archive.org/details/ucberkeley_webcast_Oy36XpGVyjA">Lecture 09: data abstraction</a></td></tr><tr id="d17c1e1c-6182-4c5b-bef2-fc090e143960"><th id="uklP" class="simple-table-header-color simple-table-header"></th><td id="TxYf" class="" style="width:114px"></td><td id="Ox=b" class="" style="width:110px"></td><td id="_|?I" class="" style="width:96px"></td><td id="Eaft" class=""><a href="https://archive.org/details/ucberkeley_webcast__qGeRWplPgc">Lecture 10: sequences</a></td></tr><tr id="2ecce3f7-f1af-4289-8ca0-7d9a4d66d57a"><th id="uklP" class="simple-table-header-color simple-table-header"></th><td id="TxYf" class="" style="width:114px"></td><td id="Ox=b" class="" style="width:110px"></td><td id="_|?I" class="" style="width:96px"></td><td id="Eaft" class=""><a href="https://archive.org/details/ucberkeley_webcast_nzMPF59Ackg">Lecture 11: Example: calculator</a></td></tr><tr id="4466cdf4-b809-4a3d-9582-1ae054e2f359"><th id="uklP" class="block-color-gray_background simple-table-header">Midterm 1</th><td id="TxYf" class="block-color-gray_background" style="width:114px"></td><td id="Ox=b" class="block-color-gray_background" style="width:110px"></td><td id="_|?I" class="block-color-gray_background" style="width:96px"></td><td id="Eaft" class="block-color-gray_background"></td></tr><tr id="f1ed1cb5-488a-4cd8-bd08-4bfb2516f934"><th id="uklP" class="simple-table-header-color simple-table-header">5</th><td id="TxYf" class="" style="width:114px">2.2.2-3, 2.3.1-3</td><td id="Ox=b" class="" style="width:110px">☑️</td><td id="_|?I" class="" style="width:96px">☑️</td><td id="Eaft" class=""><a href="https://archive.org/details/ucberkeley_webcast_pSuEz5ZCVAg">Lecture 12: hierarchical data</a></td></tr><tr id="63c41567-e72a-48aa-9650-7030abd0087d"><th id="uklP" class="simple-table-header-color simple-table-header"></th><td id="TxYf" class="" style="width:114px"></td><td id="Ox=b" class="" style="width:110px"></td><td id="_|?I" class="" style="width:96px"></td><td id="Eaft" class=""><a href="https://archive.org/details/ucberkeley_webcast_kbqJ3UGPgOc">Lecture 13: hierarchical data</a></td></tr><tr id="eb77cbef-2b3b-4a98-a052-0281a75c0226"><th id="uklP" class="simple-table-header-color simple-table-header"></th><td id="TxYf" class="" style="width:114px"></td><td id="Ox=b" class="" style="width:110px"></td><td id="_|?I" class="" style="width:96px"></td><td id="Eaft" class=""><a href="https://archive.org/details/ucberkeley_webcast_3FjDrWv00Hc">Lecture 14: Example: Scheme-1 interpr</a></td></tr><tr id="006f9f9e-206d-4378-ad78-86e12f1e21a1"><th id="uklP" class="block-color-gray_background simple-table-header">Project 2</th><td id="TxYf" class="block-color-gray_background" style="width:114px"></td><td id="Ox=b" class="block-color-gray_background" style="width:110px"></td><td id="_|?I" class="block-color-gray_background" style="width:96px"></td><td id="Eaft" class="block-color-gray_background"></td></tr><tr id="48a7975f-879d-4a59-bcb7-891ca906b7c7"><th id="uklP" class="block-color-gray_background simple-table-header">BREAK</th><td id="TxYf" class="block-color-gray_background" style="width:114px"></td><td id="Ox=b" class="block-color-gray_background" style="width:110px"></td><td id="_|?I" class="block-color-gray_background" style="width:96px"></td><td id="Eaft" class="block-color-gray_background">Lecture 15 is not given due to a half-term</td></tr><tr id="2c4b7405-9bb6-4175-8b5d-4dcf6ef984b4"><th id="uklP" class="simple-table-header-color simple-table-header">6</th><td id="TxYf" class="" style="width:114px">2.4-2.5.2</td><td id="Ox=b" class="" style="width:110px">☑️</td><td id="_|?I" class="" style="width:96px">☑️</td><td id="Eaft" class=""><a href="https://archive.org/details/ucberkeley_webcast_rz_XpDhDtFI">Lecture 16: generic operators</a></td></tr><tr id="23f56c5b-f64a-45ef-b756-50ac62cce247"><th id="uklP" class="simple-table-header-color simple-table-header"></th><td id="TxYf" class="" style="width:114px"></td><td id="Ox=b" class="" style="width:110px"></td><td id="_|?I" class="" style="width:96px"></td><td id="Eaft" class=""><a href="https://archive.org/details/ucberkeley_webcast_8HDIqZ2ZqKI">Lecture 17: generic operators</a></td></tr><tr id="be0968b0-7d05-446d-a1ed-45ec3ee073bc"><th id="uklP" class="simple-table-header-color simple-table-header">7</th><td id="TxYf" class="" style="width:114px">oop_aboveline.pdf (given)</td><td id="Ox=b" class="" style="width:110px">☑️</td><td id="_|?I" class="" style="width:96px">☑️</td><td id="Eaft" class=""><a href="https://archive.org/details/ucberkeley_webcast_jq1v8YUftxE">Lecture 18: object-oriented programmi</a></td></tr><tr id="8fafa381-c73c-49a7-bb54-f7df83e8c4cb"><th id="uklP" class="simple-table-header-color simple-table-header"></th><td id="TxYf" class="" style="width:114px"></td><td id="Ox=b" class="" style="width:110px"></td><td id="_|?I" class="" style="width:96px"></td><td id="Eaft" class=""><a href="https://archive.org/details/ucberkeley_webcast_S9mGKy3Dzqw">Lecture 19: object oriented programm</a></td></tr><tr id="2c4695b1-d78e-4b57-a566-0be9415b03d7"><th id="uklP" class="simple-table-header-color simple-table-header"></th><td id="TxYf" class="" style="width:114px"></td><td id="Ox=b" class="" style="width:110px"></td><td id="_|?I" class="" style="width:96px"></td><td id="Eaft" class=""><a href="https://archive.org/details/ucberkeley_webcast_AYoW8-L2dTQ">Lecture 20: object-oriented programmi</a></td></tr><tr id="57ea0fef-a7b8-4ac5-9c2d-ca3aa65811e3"><th id="uklP" class="block-color-gray_background simple-table-header">Midterm 2</th><td id="TxYf" class="block-color-gray_background" style="width:114px"></td><td id="Ox=b" class="block-color-gray_background" style="width:110px"></td><td id="_|?I" class="block-color-gray_background" style="width:96px"></td><td id="Eaft" class="block-color-gray_background"></td></tr><tr id="bd5e828e-6398-48ec-96cf-aac093401fd6"><th id="uklP" class="simple-table-header-color simple-table-header">8</th><td id="TxYf" class="" style="width:114px">3.1, 3.2, oop_belowline.pdf (given)</td><td id="Ox=b" class="" style="width:110px">☑️</td><td id="_|?I" class="" style="width:96px">☑️</td><td id="Eaft" class=""><a href="https://archive.org/details/ucberkeley_webcast_crlcqL7lKME">Lecture 21: assignment and state</a></td></tr><tr id="f3753519-65ab-40b8-ac51-68f1efe718fb"><th id="uklP" class="simple-table-header-color simple-table-header"></th><td id="TxYf" class="" style="width:114px"></td><td id="Ox=b" class="" style="width:110px"></td><td id="_|?I" class="" style="width:96px"></td><td id="Eaft" class=""><a href="https://archive.org/details/ucberkeley_webcast_uxvRoOV9nOk">Lecture 22: environments</a></td></tr><tr id="e689d4de-7894-44a7-bec2-13a4afa930a9"><th id="uklP" class="simple-table-header-color simple-table-header"></th><td id="TxYf" class="" style="width:114px"></td><td id="Ox=b" class="" style="width:110px"></td><td id="_|?I" class="" style="width:96px"></td><td id="Eaft" class=""><a href="https://archive.org/details/ucberkeley_webcast_jmDguUbxOns">Lecture 23: environments</a></td></tr><tr id="2576b6c9-8a73-49a5-bc00-4ef25cef0979"><th id="uklP" class="block-color-gray_background simple-table-header">Project 3 (a)</th><td id="TxYf" class="block-color-gray_background" style="width:114px"></td><td id="Ox=b" class="block-color-gray_background" style="width:110px"></td><td id="_|?I" class="block-color-gray_background" style="width:96px"></td><td id="Eaft" class="block-color-gray_background"></td></tr><tr id="ddfca1d4-2d55-4d3f-97c4-4793075a64b5"><th id="uklP" class="simple-table-header-color simple-table-header">9</th><td id="TxYf" class="" style="width:114px">3.3.1-3</td><td id="Ox=b" class="" style="width:110px">☑️</td><td id="_|?I" class="" style="width:96px">☑️</td><td id="Eaft" class=""><a href="https://archive.org/details/ucberkeley_webcast_OCocDioUZOo">Lecture 24: mutable data</a></td></tr><tr id="ed61e85a-3999-4b7a-88df-2d000e8fd55c"><th id="uklP" class="simple-table-header-color simple-table-header"></th><td id="TxYf" class="" style="width:114px"></td><td id="Ox=b" class="" style="width:110px"></td><td id="_|?I" class="" style="width:96px"></td><td id="Eaft" class=""><a href="https://archive.org/details/ucberkeley_webcast_YgUZP1YbHsM">Lecture 25: mutable data</a></td></tr><tr id="67285a2e-aa9d-4efc-8ea1-0eda22a730b6"><th id="uklP" class="simple-table-header-color simple-table-header"></th><td id="TxYf" class="" style="width:114px"></td><td id="Ox=b" class="" style="width:110px"></td><td id="_|?I" class="" style="width:96px"></td><td id="Eaft" class=""><a href="https://archive.org/details/ucberkeley_webcast_vV7gargdGxU">Lecture 26: vectors</a></td></tr><tr id="b6f02055-ea60-448c-bb08-cb0f9c437f9f"><th id="uklP" class="block-color-gray_background simple-table-header">Project 3(b)</th><td id="TxYf" class="block-color-gray_background" style="width:114px"></td><td id="Ox=b" class="block-color-gray_background" style="width:110px"></td><td id="_|?I" class="block-color-gray_background" style="width:96px"></td><td id="Eaft" class="block-color-gray_background"></td></tr><tr id="233a17a2-3038-40c2-8b37-252bbb1e9484"><th id="uklP" class="block-color-gray_background simple-table-header">BREAK</th><td id="TxYf" class="block-color-gray_background" style="width:114px"></td><td id="Ox=b" class="block-color-gray_background" style="width:110px"></td><td id="_|?I" class="block-color-gray_background" style="width:96px"></td><td id="Eaft" class="block-color-gray_background">Lecture 27-29 is not given due to spring break</td></tr><tr id="a33e7413-588d-497f-81ad-4cd45332d316"><th id="uklP" class="simple-table-header-color simple-table-header">10</th><td id="TxYf" class="" style="width:114px">3.4</td><td id="Ox=b" class="" style="width:110px">☑️</td><td id="_|?I" class="" style="width:96px">☑️</td><td id="Eaft" class=""><a href="https://archive.org/details/ucberkeley_webcast_Lr4zVJPpMrM">Lecture 30: client-server programming</a></td></tr><tr id="6b7332c6-b729-44b3-a329-a6efce9ed530"><th id="uklP" class="simple-table-header-color simple-table-header"></th><td id="TxYf" class="" style="width:114px"></td><td id="Ox=b" class="" style="width:110px"></td><td id="_|?I" class="" style="width:96px"></td><td id="Eaft" class=""><a href="https://archive.org/details/ucberkeley_webcast_tfTD0B8dX7I">Lecture 31: concurrency</a></td></tr><tr id="1ba2e6bd-0ffb-4c12-9c0d-1976fb62d4bc"><th id="uklP" class="simple-table-header-color simple-table-header"></th><td id="TxYf" class="" style="width:114px"></td><td id="Ox=b" class="" style="width:110px"></td><td id="_|?I" class="" style="width:96px"></td><td id="Eaft" class=""><a href="https://archive.org/details/ucberkeley_webcast_a_qhlzmXqAo">Lecture 32: concurrency</a></td></tr><tr id="57bb1fdc-db1e-4ba0-b5aa-d89aa0045fdb"><th id="uklP" class="simple-table-header-color simple-table-header">11</th><td id="TxYf" class="" style="width:114px">3.5.1-3, 3.5.5, therac25.pdf (given)</td><td id="Ox=b" class="" style="width:110px">☑️</td><td id="_|?I" class="" style="width:96px">☑️</td><td id="Eaft" class=""><a href="https://archive.org/details/ucberkeley_webcast_LLl89UwSflo">Lecture 33: streams</a></td></tr><tr id="c1e0f2d5-9f48-4e1c-8469-14778d612a75"><th id="uklP" class="simple-table-header-color simple-table-header"></th><td id="TxYf" class="" style="width:114px"></td><td id="Ox=b" class="" style="width:110px"></td><td id="_|?I" class="" style="width:96px"></td><td id="Eaft" class=""><a href="https://archive.org/details/ucberkeley_webcast_mtl0z0HgRTM">Lecture 34: streams</a></td></tr><tr id="c5c37911-8308-4423-bd1e-ada60b05d426"><th id="uklP" class="simple-table-header-color simple-table-header"></th><td id="TxYf" class="" style="width:114px"></td><td id="Ox=b" class="" style="width:110px"></td><td id="_|?I" class="" style="width:96px"></td><td id="Eaft" class=""><a href="https://archive.org/details/ucberkeley_webcast_nxX-aAvZbmM">Lecture 35: Therac-25</a></td></tr><tr id="0ec745a7-5771-4449-915d-58c8889d0459"><th id="uklP" class="block-color-gray_background simple-table-header">Midterm 3</th><td id="TxYf" class="block-color-gray_background" style="width:114px"></td><td id="Ox=b" class="block-color-gray_background" style="width:110px"></td><td id="_|?I" class="block-color-gray_background" style="width:96px"></td><td id="Eaft" class="block-color-gray_background"></td></tr><tr id="e069a718-e699-4ed0-9df9-c8e8e4d1c785"><th id="uklP" class="simple-table-header-color simple-table-header">12</th><td id="TxYf" class="" style="width:114px">4.1, mapreduce.pdf (given)</td><td id="Ox=b" class="" style="width:110px">☑️</td><td id="_|?I" class="" style="width:96px">☑️</td><td id="Eaft" class=""><a href="https://archive.org/details/ucberkeley_webcast_E8ZyYL1qWWY">Lecture 36: metacircular evaluator -</a></td></tr><tr id="1b97ca3c-0728-4ff0-bddf-8161de5ed949"><th id="uklP" class="simple-table-header-color simple-table-header"></th><td id="TxYf" class="" style="width:114px"></td><td id="Ox=b" class="" style="width:110px"></td><td id="_|?I" class="" style="width:96px"></td><td id="Eaft" class=""><a href="https://archive.org/details/ucberkeley_webcast_0SbpbHiyyEU">Lecture 37: metacircular evaluator -</a></td></tr><tr id="7ec549f8-8c9d-4754-acf8-0d6a7963441f"><th id="uklP" class="simple-table-header-color simple-table-header"></th><td id="TxYf" class="" style="width:114px"></td><td id="Ox=b" class="" style="width:110px"></td><td id="_|?I" class="" style="width:96px"></td><td id="Eaft" class=""><a href="https://archive.org/details/ucberkeley_webcast_OVbHFr6SG_8">Lecture 38: mapreduce</a></td></tr><tr id="38367efa-c134-4398-8b87-a74bdf5c6922"><th id="uklP" class="simple-table-header-color simple-table-header"></th><td id="TxYf" class="" style="width:114px"></td><td id="Ox=b" class="" style="width:110px"></td><td id="_|?I" class="" style="width:96px"></td><td id="Eaft" class=""><a href="https://archive.org/details/ucberkeley_webcast_tlABAGE-Tvc">Lecture 39: mapreduce</a></td></tr><tr id="35e4ad59-55a3-4d03-900e-0e612f090759"><th id="uklP" class="simple-table-header-color simple-table-header">13</th><td id="TxYf" class="" style="width:114px">See homework</td><td id="Ox=b" class="" style="width:110px">☑️</td><td id="_|?I" class="" style="width:96px">☑️</td><td id="Eaft" class=""><a href="https://archive.org/details/ucberkeley_webcast_S9VoxtdsRyA">Lecture 40: analyzing evaluator</a></td></tr><tr id="d1cb2d10-9c5d-4034-a1b0-c39623efaf3a"><th id="uklP" class="simple-table-header-color simple-table-header">14</th><td id="TxYf" class="" style="width:114px">4.2,4.3</td><td id="Ox=b" class="" style="width:110px">☑️</td><td id="_|?I" class="" style="width:96px">☑️</td><td id="Eaft" class=""><a href="https://archive.org/details/ucberkeley_webcast_WJsgTZsFE3M">Lecture 41: lazy evaluator</a></td></tr><tr id="299d4508-5247-49b7-989d-4ca67e0528de"><th id="uklP" class="block-color-gray_background simple-table-header">Project 4a</th><td id="TxYf" class="block-color-gray_background" style="width:114px"></td><td id="Ox=b" class="block-color-gray_background" style="width:110px"></td><td id="_|?I" class="block-color-gray_background" style="width:96px"></td><td id="Eaft" class="block-color-gray_background"></td></tr><tr id="274e5b65-59e1-422b-a421-a798d247dc41"><th id="uklP" class="simple-table-header-color simple-table-header">15</th><td id="TxYf" class="" style="width:114px">4.4.1-3</td><td id="Ox=b" class="" style="width:110px">☑️</td><td id="_|?I" class="" style="width:96px">☑️</td><td id="Eaft" class=""><a href="https://archive.org/details/ucberkeley_webcast_JIMS_mspmug">Lecture 42: logic programming</a></td></tr><tr id="627db0bc-11ca-4bb1-82dc-f57f524dad3d"><th id="uklP" class="simple-table-header-color simple-table-header"></th><td id="TxYf" class="" style="width:114px"></td><td id="Ox=b" class="" style="width:110px"></td><td id="_|?I" class="" style="width:96px"></td><td id="Eaft" class=""><a href="https://archive.org/details/ucberkeley_webcast_i5XtLVwTcZY">Lecture 43: logic programming</a></td></tr><tr id="b1e979e5-e5b0-4915-8fd5-308cd4e20537"><th id="uklP" class="block-color-gray_background simple-table-header">Project 4b</th><td id="TxYf" class="block-color-gray_background" style="width:114px"></td><td id="Ox=b" class="block-color-gray_background" style="width:110px"></td><td id="_|?I" class="block-color-gray_background" style="width:96px"></td><td id="Eaft" class="block-color-gray_background"></td></tr><tr id="5b54cecc-d060-4d2a-9359-e71ac04916bd"><th id="uklP" class="simple-table-header-color simple-table-header">16</th><td id="TxYf" class="" style="width:114px">n/a</td><td id="Ox=b" class="" style="width:110px">n/a</td><td id="_|?I" class="" style="width:96px">n/a</td><td id="Eaft" class=""><a href="https://archive.org/details/ucberkeley_webcast_zWiQru4tn-o">Lecture 44: Review</a></td></tr><tr id="2f527201-8658-4b07-b291-20cdd7101acf"><th id="uklP" class="block-color-gray_background simple-table-header">Final exam</th><td id="TxYf" class="block-color-gray_background" style="width:114px"></td><td id="Ox=b" class="block-color-gray_background" style="width:110px"></td><td id="_|?I" class="block-color-gray_background" style="width:96px"></td><td id="Eaft" class="block-color-gray_background"></td></tr></tbody></table></div></article></body></html>
